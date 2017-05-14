@@ -1,0 +1,18 @@
+each post, index in posts
+  if (index % 2) == 1
+    .row
+      .col-lg-6
+        h2
+          a(href='/u/'+post.username)= post.username+'说'
+        p 
+          small= post.time
+        p= post.post
+  else
+    .col-lg-6
+      h2
+        a(href='/u/'+post.username)= post.username+'说'
+      p 
+        small= post.time
+      p= post.post
+
+

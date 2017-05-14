@@ -70,11 +70,7 @@ app.use(function (req, res, next) {
 });
 
 app.use('/', index);
-// app.use('/u/:user', user);
-// app.use('/post', post);
-// app.use('/reg', reg);
-// app.use('/login', login);
-// app.use('/logout', logout);
+
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
