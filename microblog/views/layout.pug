@@ -2,5 +2,30 @@ doctype html
 html
   include includes/head.pug
   body
+    .container
+      .header.clearfix
+        nav
+          ul.nav.nav-pills.float-right
+          if !user()
+            li
+              a(href='/login') 登录
+            li
+              a(href='/reg') 注册
+          else
+            li
+              a(href='/logout') 登出
+        h3.text-muted Project name
+      .container
+      if regValidate.success()
+        .alert.alert-success(role='alert')= regValidate.statusStr
+      if regValidate.error()
+        .alert.alert-danger(role='alert')= regValidate.statusStr
+
+      .jumbotron
+        h1 欢迎来到 Microblog
+        p Microblog 是一个基于 Node.js 的微博系统。
+        p
+          a.btn.btn-primary.btn-large(href='/login') 登录
+          a.btn.btn-large(href='/reg') 立即注册
     block content
     include includes/foot.pug

@@ -1,0 +1,22 @@
+extends layout
+
+block content
+  form.form-horizontal(method='post', action='/reg')
+    fieldset
+      legend 用户注册
+      .form-group
+        label.col-sm-2.control-label(for='username') 用户名
+        .col-sm-10
+          input#username.form-control(type='text', name='username')
+          p.help-block 你的账户名称，用于登录和显示
+      .form-group
+        label.col-sm-2.control-label(for='password') 口令
+        .col-sm-10
+          input#password.form-control(type='password', name='password')
+      .form-group
+        label.col-sm-2.control-label(for='password-repeat') 重复输入口令
+        .col-sm-10
+          input#password-repeat.form-control(type='password', name='password-repeat')
+      .form-group
+        .col-sm-offset-2.col-sm-10
+          button.btn.btn-primary(type='submit') 注册
