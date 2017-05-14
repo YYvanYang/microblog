@@ -14,12 +14,13 @@
 
 2, Get the connect string of the database.
   - click connect
+    ![](./db-connect.png)
   - add IP whitelist
     You can add "0.0.0.0/0" by default. and then you can access it from anywhere.
     ![](./conn-string.png)
   - copy the URI Connection String
     Replace <PASSWORD> with the db user you created, and <DATABASE> with the name of the database to which you wish to connect.
-    ![](./db-connect.png)
+    
 
 ### [Node.js Driver Example][1]
 
