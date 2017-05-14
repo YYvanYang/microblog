@@ -11,10 +11,12 @@
 
 ### Create a new Cluster(database)
 1, Build a new cluster first.
+
 2, Get the connect string of the database.
   - click connect
   - add IP whitelist
     You can add "0.0.0.0/0" by default. and then you can access it from anywhere.
+    ![](./conn-string.png)
   - copy the URI Connection String
     Replace <PASSWORD> with the db user you created, and <DATABASE> with the name of the database to which you wish to connect.
     ![](./db-connect.png)
@@ -39,6 +41,8 @@ mongodb://username:password@host1:port1,...,hostN:portN/database?authSource=admi
 For example, the following connection string specifies test in the database component and includes the authSource=admin option.
 
 ```js
+// `kay` is the username
+// `myRealPassword` is the password
 var uriTestDb = "mongodb://kay:myRealPassword@mycluster0-shard-00-00-wpeiv.mongodb.net:27017,mycluster0-shard-00-01-wpeiv.mongodb.net:27017,mycluster0-shard-00-02-wpeiv.mongodb.net:27017/test?ssl=true&replicaSet=Mycluster0-shard-0&authSource=admin";
 MongoClient.connect(uriTestDb, function(err, db) {
    db.close();
